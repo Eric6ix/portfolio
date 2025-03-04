@@ -74,9 +74,27 @@ body {
 .foto-perfil {
   width: 200px;
   height: 200px;
-  box-shadow: 0 0 20px rgb(246, 246, 246);
+  animation: oscilarfoto 2s infinite alternate;
   border-radius: 50%;
 }
+
+
+/* animação da Foto de perfil*/
+@keyframes oscilarfoto {
+  0% {
+    box-shadow: none; /* Sem sombra no início */
+  }
+  50% {
+    box-shadow: 0px 1px 50px rgba(255, 255, 255, 0.746); /* Sombra reluzente no meio */
+  }
+  100% {
+    box-shadow: none; /* Sem sombra no final */
+  }
+}
+
+
+
+
 
 h1 {
   font-size: 3.5rem;
@@ -84,11 +102,29 @@ h1 {
   font-weight: bold;
   margin: 20px;
   text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.746);
+  animation: oscilarH1 2s infinite alternate;
 }
+
+
+/* animação de H1 do título */
+@keyframes oscilarH1 {
+  0% {
+    text-shadow: none; /* Sem sombra no início */
+  }
+  50% {
+    text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.746); /* Sombra reluzente no meio */
+  }
+  100% {
+    text-shadow: none; /* Sem sombra no final */
+  }
+}
+
+
+
 
 .cabecalho-subtitulo {
   font-size: 1.5rem;
-  color: var(--claro);
+  color: #fff;
 }
 
 .sobre {
