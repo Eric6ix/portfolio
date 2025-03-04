@@ -74,17 +74,24 @@ body {
 .foto-perfil {
   width: 200px;
   height: 200px;
-  animation: oscilarfoto 2s infinite alternate;
   border-radius: 50%;
+  animation: animacao-locomocao-luz 6s infinite alternate;
+
 }
 
-/* animação da Foto de perfil*/
-@keyframes oscilarfoto {
-  0% {
+/* animação de icone de perfi */
+@keyframes animacao-locomocao-luz {
+  0%,
+  100% {
+    transform: translateY(0);
     box-shadow: none; /* Sem sombra no início */
+
   }
-  50% {
+
+  50%{
+    transform: translateY(-15%);
     box-shadow: 0px 1px 50px rgba(255, 255, 255, 0.746); /* Sombra reluzente no meio */
+
   }
   100% {
     box-shadow: none; /* Sem sombra no final */
@@ -97,19 +104,23 @@ h1 {
   font-weight: bold;
   margin: 20px;
   text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.746);
-  animation: oscilarH1 2s infinite alternate;
+  animation: oscilarH1 6s infinite alternate;
 }
 
 /* animação de H1 do título */
 @keyframes oscilarH1 {
   0% {
+    transform: translateY(0);
     text-shadow: none; /* Sem sombra no início */
   }
   50% {
     text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.746); /* Sombra reluzente no meio */
+    transform: translateY(30%);
+
   }
   100% {
     text-shadow: none; /* Sem sombra no final */
+
   }
 }
 
@@ -198,3 +209,77 @@ h1 {
   padding: 1.5rem;
   color: rgba(226, 232, 240, 0.8);
 }
+
+.contatos {
+  padding: 6rem 2rem;
+}
+
+.contatos-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.formulario-contato {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border: 1px solid var(--vidro);
+  border-radius: 16px;
+}
+
+.campo-form {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--claro);
+  border-radius: 8px;
+  border: 1px solid var(--vidro);
+  outline: none;
+}
+
+.campo-form:focus {
+  border-color: var(--secundaria);
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.grupo-form{
+margin-bottom: 1.5rem;
+}
+
+.botao-form{
+color: var(--claro);
+background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+padding: 1rem 2rem;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-weight: bold;
+width: 100%;
+transition: all 1s ease;
+}
+
+.botao-form:hover{
+  transform: rotateY(-4px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4) ;
+
+}
+
+.particulas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+  radial-gradient(circle at 90% 80%, var(--primaria) 0%, transparent 20%),
+  var(--maisEscuro);
+}
+
+
+
