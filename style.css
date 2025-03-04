@@ -1,7 +1,119 @@
-*{
-    margin: 0;
-    padding: 0;
-    color: blueviolet;
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --maisEscuro: #0a0f1c;
+  --claro: #e2e8f0;
+  --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--escuro);
+  color: var(--claro);
+}
+
+.navegacao {
+  position: fixed;
+  top: 0;
+  background: rgba(15, 23, 42, 0.8);
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--claro);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+/* after = depois | before = antes */
+.menu-link::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: width 0.1s ease;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+.cabecalho {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 20px rgb(246, 246, 246);
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 20px;
+  text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.746);
+}
+
+.cabecalho-subtitulo {
+  font-size: 1.5rem;
+  color: var(--claro);
+}
+
+.sobre {
+  padding: 6rem 2rem;
+}
+
+.sobre-titulo {
+  font-size: 3rem;
+  color: var(--claro);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sobre-caixa {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgb(246, 246, 246);
+}
+.sobre-paragrafo {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
