@@ -16,27 +16,38 @@
           <a href="#inicio" class="menu-link">Início</a>
         </li>
         <li>
+          <a href="#contatos" class="menu-link">Contatos</a>
+        </li>
+        <li>
           <a href="#sobre" class="menu-link">Sobre</a>
         </li>
         <li>
           <a href="#projetos" class="menu-link">Projetos</a>
         </li>
-        <li>
-          <a href="#contatos" class="menu-link">Contatos</a>
-        </li>
       </ul>
     </nav>
 
     <main id="inicio" class="cabecalho">
-      <img
-        src="foto-de-perfil.jpeg"
-        alt="Foto de Zenkai"
-        class="foto-perfil"
-      />
+      <img src="foto-de-perfil.jpeg" alt="Foto de Zenkai" class="foto-perfil" />
       <h1>Zenkai | Eric Martins</h1>
       <p class="cabecalho-subtitulo">Desenvolvedor FullStack</p>
     </main>
 
+    <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em contato</h2>
+      <form class="formulario-contato" id="formulario" onsubmit="acao(event)">
+        <div>
+          <textarea
+            class="campo-form"
+            placeholder="Digite sua Menssagem"
+            rows="4"
+            id="menssagemss"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="botao-form">Enviar Menssagem</button>
+      </form>
+    </section>
     <section id="sobre" class="sobre">
       <h2 class="sobre-titulo">Sobre Mim</h2>
       <div class="sobre-caixa">
@@ -61,27 +72,29 @@
             class="projetos-img"
           />
           <div class="cixa-textos-projetos">
-            <h3 class="info-prejetos">proejto 1</h3>
+            <h3 class="info-prejetos">Mechas&Mechas</h3>
             <p class="paragrafo-proejtos">
               Lending page Salão de beleza Mechas&Mechas, com responsividade,
-              links personalizadaso e encaminhamento para chat privado
+              links personalizadaso e encaminhamento para chat privado confira
+              <a href="https://eric6ix.github.io/projeto_Mechs-Mechas/" class="">aqui</a>
             </p>
           </div>
         </div>
         <!-- Card 2 -->
         <div class="projetos-card">
           <img
-            src="img/b2e99c6efc25577c67b7780a60da7475.jpg"
+            src="fincheck_dashbord_versão1.png"
             alt="Projeto 1"
             class="projetos-img"
           />
           <div class="cixa-textos-projetos">
-            <h3 class="info-prejetos">proejto 1</h3>
+            <h3 class="info-prejetos">💰 FinCheck</h3>
             <p class="paragrafo-proejtos">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-              quia magni fugiat, quod, maxime ipsa ipsam sapiente, optio fugit
-              blanditiis libero. Repudiandae numquam dolor laborum eveniet
-              officiis quo repellat. Quia?
+              Aplicação web para gestão financeira pessoal, desenvolvida com
+              foco em aprendizado fullstack e organização de finanças de forma
+              simples e intuitiva. Confira o
+              <a href="https://github.com/Eric6ix/Fincheck" class="">README.rd</a>
+              no meu github.
             </p>
           </div>
         </div>
@@ -104,34 +117,14 @@
         </div>
       </div>
     </section>
-
-    <section id="contatos" class="contatos">
-      <h2 class="contatos-titulo">Entre em contato</h2>
-      <form class="formulario-contato" id="formulario" onsubmit="acao(event)">
-        <div class="grupo-form">
-          <input placeholder="Nome" class="campo-form" id="nome" />
-        </div>
-        <div>
-          <textarea
-            class="campo-form"
-            placeholder="Digite sua Menssagem"
-            rows="4"
-            id="menssagemss"
-          ></textarea>
-        </div>
-
-        <button type="submit" class="botao-form">Enviar Menssagem</button>
-      </form>
-    </section>
   </body>
 
   <script>
     function acao(event) {
-      const nome = document.getElementById("nome").value;
       const menssagem = document.getElementById("menssagemss").value;
       const fone = "5563993057267";
 
-      const texto = `Olá! Eric Me chamo:  ${nome} |     ${menssagem}`;
+      const texto = `Olá Eric! ${menssagem}`;
       const msgFormatada = encodeURIComponent(texto);
 
       const url = `https://wa.me/${fone}/?text=${msgFormatada}`;

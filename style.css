@@ -76,7 +76,6 @@ body {
   height: 200px;
   border-radius: 50%;
   animation: animacao-locomocao-luz 6s infinite alternate;
-
 }
 
 /* animação de icone de perfi */
@@ -85,13 +84,11 @@ body {
   100% {
     transform: translateY(0);
     box-shadow: none; /* Sem sombra no início */
-
   }
 
-  50%{
+  50% {
     transform: translateY(-15%);
     box-shadow: 0px 1px 50px rgba(255, 255, 255, 0.746); /* Sombra reluzente no meio */
-
   }
   100% {
     box-shadow: none; /* Sem sombra no final */
@@ -116,11 +113,9 @@ h1 {
   50% {
     text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.746); /* Sombra reluzente no meio */
     transform: translateY(30%);
-
   }
   100% {
     text-shadow: none; /* Sem sombra no final */
-
   }
 }
 
@@ -221,6 +216,7 @@ h1 {
 }
 
 .formulario-contato {
+  position: relative;
   max-width: 600px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
@@ -228,7 +224,46 @@ h1 {
   backdrop-filter: blur(5px);
   padding: 2rem;
   border: 1px solid var(--vidro);
-  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Pixel com rastro */
+.formulario-contato::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+  animation: moverPixelComRastro 2s linear infinite;
+}
+
+/* Caminho do pixel com animação */
+@keyframes moverPixelComRastro {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
+  75% {
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
 }
 
 .campo-form {
@@ -246,29 +281,28 @@ h1 {
   box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
 }
 
-.grupo-form{
-margin-bottom: 1.5rem;
+.grupo-form {
+  margin-bottom: 1.5rem;
 }
 
-.botao-form{
-color: var(--claro);
-background: linear-gradient(45deg, var(--primaria), var(--secundaria));
-padding: 1rem 2rem;
-border: none;
-border-radius: 8px;
-cursor: pointer;
-font-weight: bold;
-width: 100%;
-transition: all 1s ease;
+.botao-form {
+  color: var(--claro);
+  background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 1s ease;
 }
 
-.botao-form:hover{
+.botao-form:hover {
   transform: rotateY(-4px);
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4) ;
-
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
 }
 
-.particulas{
+.particulas {
   position: fixed;
   top: 0;
   left: 0;
@@ -276,10 +310,11 @@ transition: all 1s ease;
   height: 100%;
   z-index: -1;
   opacity: 0.5;
-  background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
-  radial-gradient(circle at 90% 80%, var(--primaria) 0%, transparent 20%),
-  var(--maisEscuro);
+  background: radial-gradient(
+      circle at 10% 20%,
+      var(--primaria) 0%,
+      transparent 20%
+    ),
+    radial-gradient(circle at 90% 80%, var(--primaria) 0%, transparent 20%),
+    var(--maisEscuro);
 }
-
-
-
