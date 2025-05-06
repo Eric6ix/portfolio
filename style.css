@@ -129,7 +129,7 @@ h1 {
 }
 
 .sobre-titulo {
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--claro);
   text-align: center;
   margin-bottom: 20px;
@@ -148,7 +148,7 @@ h1 {
 
 .sobre-paragrafo {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 3rem;
 }
 
